@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayaka's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth; /* Smooth scroll for anchor links */
+      }
+      /* Transition for navbar background */
+      #navbar {
+        transition: background-color 0.3s;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navigation Bar -->
+    <!-- Fixed navbar that changes background on scroll -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-10 bg-white bg-opacity-0 md:bg-opacity-100 shadow-md"
+    >
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo / Name -->
+          <div class="font-bold text-xl text-pink-500">Ayaka</div>
+
+          <!-- Desktop Links -->
+          <div class="hidden md:flex space-x-6">
+            <a href="#about" class="text-gray-800 hover:text-pink-100">About</a>
+            <a href="#projects" class="text-gray-800 hover:text-pink-100"
+              >Projects</a
+            >
+            <a href="#contact" class="text-gray-800 hover:text-pink-100"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Hamburger Button (Mobile) -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden flex flex-col space-y-4 py-4"
+        >
+          <a href="#about" class="text-gray-800 hover:text-pink-500">About</a>
+          <a href="#projects" class="text-gray-800 hover:text-pink-500"
+            >Projects</a
+          >
+          <a href="#contact" class="text-gray-800 hover:text-pink-500"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <!-- Main header section -->
+    <header class="bg-pink-500 text-white py-32 text-center mt-16">
+      <h1 class="text-4xl font-bold">Ayaka's Portfolio</h1>
+      <p class="mt-2 text-lg">Web Developer / Designer</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-pink-500 mb-4">About</h2>
+      <p>
+        Hello, I'm Ayaka. I am learning web development and interested in React
+        and TypeScript. I focus on simple and readable designs.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-16 px-4 max-w-3xl mx-auto bg-white rounded-lg shadow-md"
+    >
+      <h2 class="text-3xl font-bold text-pink-500 mb-8">Projects</h2>
+
+      <div class="mb-6 p-4 border-l-4 border-pink-500">
+        <h3 class="text-2xl font-semibold">Weather App</h3>
+        <p>
+          A simple app that fetches and displays weather information from an
+          API.
+        </p>
+      </div>
+
+      <div class="mb-6 p-4 border-l-4 border-pink-500">
+        <h3 class="text-2xl font-semibold">Todo List</h3>
+        <p>
+          A task management app made with JavaScript that allows adding and
+          deleting tasks.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-pink-500 mb-4">Contact</h2>
+      <p>
+        Email:
+        <a href="mailto:ayagooon08@gmail.com" class="text-pink-500 underline"
+          >ayagooon08@gmail.com</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a
+          href="https://github.com/Ayaka0187"
+          target="_blank"
+          class="text-pink-500 underline"
+          >https://github.com/Ayaka0187</a
+        >
+      </p>
+    </section>
+
+    <!-- Script -->
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const navbar = document.getElementById("navbar");
+
+      // Toggle mobile menu
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Change navbar background on scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("bg-white", "bg-opacity-100", "shadow-md");
+        } else {
+          navbar.classList.remove("bg-white", "bg-opacity-100", "shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>
